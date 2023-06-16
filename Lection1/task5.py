@@ -9,11 +9,16 @@
 # это сделать невозможно.
 # Input: 3 4(ввод на разных строках) Output: 6
 
-i = int(input("i"))
-j = int(input("j"))
 
+def calculate_total_wagons(i, j):
+    forward_wagons = j + i - 1  # количество вагонов при нумерации от головы поезда
+    backward_wagons = i + j - 1  # количество вагонов при нумерации от хвоста поезда
+    return max(forward_wagons, backward_wagons)
 
+# Чтение вводных данных
+i = int(input("Введите позицию вагона Вити: "))
+j = int(input("Введите номер вагона Вити: "))
 
-    # if i+j-1 > 0:
-    # else: 
-    # print ("Недостаточно информации"):
+total_wagons = calculate_total_wagons(i, j)
+print(f"В электричке всего {total_wagons} вагонов.")
+
